@@ -110,14 +110,22 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--laiton); outline-
 /* ---------- header ---------- */
 .site-header{ position:sticky; top:0; z-index:60; background: rgba(243,236,224,.9); backdrop-filter: blur(8px); border-bottom:1px solid var(--ligne); }
 
-/* bannière d'annonce */
-.topbanner{ background:var(--clinique-deep); color:var(--blanc-casse); display:flex; align-items:center; justify-content:center; gap:14px; padding:10px 44px 10px 18px; position:relative; font-size:.9rem; text-align:center; }
-.topbanner-text{ display:inline-flex; align-items:center; gap:9px; font-weight:500; }
-.topbanner-text svg{ width:18px; height:18px; flex-shrink:0; color:var(--clinique-soft); }
-.topbanner-close{ position:absolute; right:12px; top:50%; transform:translateY(-50%); background:none; border:none; color:var(--blanc-casse); font-size:1.4rem; line-height:1; cursor:pointer; padding:4px 8px; opacity:.8; }
-.topbanner-close:hover{ opacity:1; }
-.topbanner.hidden{ display:none; }
-@media (max-width:560px){ .topbanner{ font-size:.82rem; padding:10px 40px 10px 14px; } }
+/* modale d'ouverture */
+.modal-overlay{ position:fixed; inset:0; z-index:200; background:rgba(37,48,46,.55); backdrop-filter:blur(4px); display:flex; align-items:center; justify-content:center; padding:24px; opacity:0; animation:modalFade .35s ease forwards; }
+.modal-overlay.hidden{ display:none; }
+@keyframes modalFade{ to{ opacity:1; } }
+.modal-box{ position:relative; background:var(--beige-carte); border-radius:var(--r-md); max-width:480px; width:100%; padding:42px 38px 34px; text-align:center; box-shadow:0 24px 60px rgba(37,48,46,.28); border-top:5px solid var(--clinique); transform:translateY(14px); animation:modalRise .4s ease .05s forwards; }
+@keyframes modalRise{ to{ transform:translateY(0); } }
+.modal-close{ position:absolute; right:16px; top:12px; background:none; border:none; font-size:1.7rem; line-height:1; color:var(--encre-doux); cursor:pointer; padding:4px 8px; }
+.modal-close:hover{ color:var(--clinique-deep); }
+.modal-icon{ width:60px; height:60px; margin:0 auto 14px; border-radius:50%; background:rgba(108,132,158,.14); display:flex; align-items:center; justify-content:center; }
+.modal-icon svg{ width:30px; height:30px; color:var(--clinique); }
+.modal-eyebrow{ font-size:.74rem; letter-spacing:.18em; text-transform:uppercase; color:var(--clinique); font-weight:700; display:block; margin-bottom:.5em; }
+.modal-box h2{ font-size:1.5rem; margin-bottom:.6em; }
+.modal-box p{ font-size:.96rem; color:var(--encre-doux); margin:0 auto .8em; max-width:none; }
+.modal-sub{ font-size:.9rem; }
+.modal-ok{ width:100%; justify-content:center; margin-top:8px; }
+@media (max-width:480px){ .modal-box{ padding:36px 24px 28px; } }
 .nav{ display:flex; align-items:center; justify-content:space-between; gap:18px; max-width:var(--max-w); margin:0 auto; padding:12px 26px; }
 .brand{ display:flex; align-items:center; gap:12px; }
 .brand svg{ width:46px; height:46px; flex-shrink:0; }
@@ -279,12 +287,18 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--laiton); outline-
 <body>
 <a href="#cabinet" class="skip">Aller au contenu</a>
 
-<div class="topbanner" id="topbanner" role="region" aria-label="Annonce">
-  <span class="topbanner-text">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-    Nouveau cabinet — ouverture en septembre 2026. Prise de rendez-vous bientôt disponible.
-  </span>
-  <button class="topbanner-close" id="topbanner-close" aria-label="Fermer l'annonce">&times;</button>
+<div class="modal-overlay" id="openModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose" aria-label="Fermer">&times;</button>
+    <div class="modal-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+    </div>
+    <span class="modal-eyebrow">Nouveau cabinet</span>
+    <h2 id="modalTitle">Ouverture en septembre 2026</h2>
+    <p>Le cabinet <strong>Orthodontie Espace d'Ornon</strong> ouvrira ses portes en septembre 2026, au 3 chemin de Couhins à Léognan, en face de l'Espace d'Ornon (Villenave-d'Ornon).</p>
+    <p class="modal-sub">La prise de rendez-vous en ligne sera disponible prochainement.</p>
+    <button class="btn btn-primary modal-ok" id="modalOk">Découvrir le cabinet</button>
+  </div>
 </div>
 
 <header class="site-header">
@@ -655,9 +669,15 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--laiton); outline-
   });
   l.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){l.classList.remove('open');t.setAttribute('aria-expanded',false);});});
 
-  // fermeture bannière
-  var bClose=document.getElementById('topbanner-close'), banner=document.getElementById('topbanner');
-  if(bClose){ bClose.addEventListener('click',function(){ banner.classList.add('hidden'); }); }
+  // modale d'ouverture
+  var modal=document.getElementById('openModal'),
+      mClose=document.getElementById('modalClose'),
+      mOk=document.getElementById('modalOk');
+  function closeModal(){ modal.classList.add('hidden'); }
+  if(mClose) mClose.addEventListener('click',closeModal);
+  if(mOk) mOk.addEventListener('click',closeModal);
+  if(modal) modal.addEventListener('click',function(e){ if(e.target===modal) closeModal(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape' && modal && !modal.classList.contains('hidden')) closeModal(); });
 
   // pages légales
   var mainSections = Array.prototype.slice.call(document.querySelectorAll('#main-content > section:not(.legal-page)'));
