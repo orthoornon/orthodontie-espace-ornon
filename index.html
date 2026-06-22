@@ -5,6 +5,52 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Orthodontie Espace d'Ornon — Dr Fenjiro Inès, orthodontiste | Léognan &amp; Villenave-d'Ornon</title>
 <meta name="description" content="Cabinet d'orthodontie du Dr Fenjiro Inès, spécialiste qualifiée en orthopédie dento-faciale. 3 chemin de Couhins, Léognan, en face de l'Espace d'Ornon (Villenave-d'Ornon). Traitements multi-attaches, aligneurs et interception. Ouverture en septembre 2026.">
+<meta name="keywords" content="orthodontiste Léognan, orthodontie Villenave-d'Ornon, orthodontiste Gironde, bagues, aligneurs, appareil dentaire, Dr Fenjiro, Espace d'Ornon">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Dr Fenjiro Inès">
+<link rel="canonical" href="https://orthodontie-espace-ornon.fr/">
+
+<!-- Open Graph (partage réseaux sociaux / messageries) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Orthodontie Espace d'Ornon — Dr Fenjiro Inès">
+<meta property="og:description" content="Cabinet d'orthodontie à Léognan, en face de l'Espace d'Ornon (Villenave-d'Ornon). Enfants, adolescents et adultes. Ouverture en septembre 2026.">
+<meta property="og:url" content="https://orthodontie-espace-ornon.fr/">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Orthodontie Espace d'Ornon">
+
+<!-- Données structurées : cabinet d'orthodontie (référencement local Google) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dentist",
+  "name": "Orthodontie Espace d'Ornon — Dr Fenjiro Inès",
+  "description": "Cabinet d'orthodontie. Spécialiste qualifiée en orthopédie dento-faciale. Traitements pour enfants, adolescents et adultes.",
+  "url": "https://orthodontie-espace-ornon.fr/",
+  "medicalSpecialty": "Orthodontic",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "3 chemin de Couhins",
+    "addressLocality": "Léognan",
+    "postalCode": "33850",
+    "addressRegion": "Nouvelle-Aquitaine",
+    "addressCountry": "FR"
+  },
+  "areaServed": ["Léognan", "Villenave-d'Ornon", "Gironde"],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Friday"],
+      "opens": "08:45",
+      "closes": "18:30"
+    }
+  ],
+  "founder": {
+    "@type": "Person",
+    "name": "Dr Fenjiro Inès",
+    "jobTitle": "Orthodontiste, spécialiste qualifiée en orthopédie dento-faciale"
+  }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -63,6 +109,15 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--laiton); outline-
 
 /* ---------- header ---------- */
 .site-header{ position:sticky; top:0; z-index:60; background: rgba(243,236,224,.9); backdrop-filter: blur(8px); border-bottom:1px solid var(--ligne); }
+
+/* bannière d'annonce */
+.topbanner{ background:var(--clinique-deep); color:var(--blanc-casse); display:flex; align-items:center; justify-content:center; gap:14px; padding:10px 44px 10px 18px; position:relative; font-size:.9rem; text-align:center; }
+.topbanner-text{ display:inline-flex; align-items:center; gap:9px; font-weight:500; }
+.topbanner-text svg{ width:18px; height:18px; flex-shrink:0; color:var(--clinique-soft); }
+.topbanner-close{ position:absolute; right:12px; top:50%; transform:translateY(-50%); background:none; border:none; color:var(--blanc-casse); font-size:1.4rem; line-height:1; cursor:pointer; padding:4px 8px; opacity:.8; }
+.topbanner-close:hover{ opacity:1; }
+.topbanner.hidden{ display:none; }
+@media (max-width:560px){ .topbanner{ font-size:.82rem; padding:10px 40px 10px 14px; } }
 .nav{ display:flex; align-items:center; justify-content:space-between; gap:18px; max-width:var(--max-w); margin:0 auto; padding:12px 26px; }
 .brand{ display:flex; align-items:center; gap:12px; }
 .brand svg{ width:46px; height:46px; flex-shrink:0; }
@@ -223,6 +278,14 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--laiton); outline-
 </head>
 <body>
 <a href="#cabinet" class="skip">Aller au contenu</a>
+
+<div class="topbanner" id="topbanner" role="region" aria-label="Annonce">
+  <span class="topbanner-text">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+    Nouveau cabinet — ouverture en septembre 2026. Prise de rendez-vous bientôt disponible.
+  </span>
+  <button class="topbanner-close" id="topbanner-close" aria-label="Fermer l'annonce">&times;</button>
+</div>
 
 <header class="site-header">
   <nav class="nav" aria-label="Navigation principale">
@@ -591,6 +654,10 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--laiton); outline-
     t.setAttribute('aria-expanded',o);
   });
   l.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){l.classList.remove('open');t.setAttribute('aria-expanded',false);});});
+
+  // fermeture bannière
+  var bClose=document.getElementById('topbanner-close'), banner=document.getElementById('topbanner');
+  if(bClose){ bClose.addEventListener('click',function(){ banner.classList.add('hidden'); }); }
 
   // pages légales
   var mainSections = Array.prototype.slice.call(document.querySelectorAll('#main-content > section:not(.legal-page)'));
