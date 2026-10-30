@@ -4,19 +4,38 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Orthodontie Espace d'Ornon — Dr Fenjiro Inès, orthodontiste | Léognan &amp; Villenave-d'Ornon</title>
-<meta name="description" content="Cabinet d'orthodontie du Dr Fenjiro Inès, spécialiste qualifiée en orthopédie dento-faciale. 3 chemin de Couhins, Léognan, en face de l'Espace d'Ornon (Villenave-d'Ornon). Traitements multi-attaches, aligneurs et interception. Ouverture en octobre 2026.">
+<meta name="description" content="Cabinet d'orthodontie du Dr Fenjiro Inès, spécialiste qualifiée en orthopédie dento-faciale. 3 chemin de Couhins, Léognan, en face de l'Espace d'Ornon (Villenave-d'Ornon). Traitements multi-attaches, aligneurs et interception pour tous les publics.">
 <meta name="keywords" content="orthodontiste Villenave-d'Ornon, orthodontiste Léognan, orthodontiste Saint-Selve, orthodontiste La Brède, orthodontiste Bègles, orthodontiste Cadaujac, orthodontiste Cadillac, orthodontie Gironde, bagues, aligneurs, appareil dentaire, Dr Fenjiro, Espace d'Ornon">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Dr Fenjiro Inès">
 <link rel="canonical" href="https://orthodontie-espace-ornon.fr/">
+<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+<link rel="apple-touch-icon" href="img/favicon.svg">
+<meta name="theme-color" content="#586F8F">
 
 <!-- Open Graph (partage réseaux sociaux / messageries) -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Orthodontie Espace d'Ornon — Dr Fenjiro Inès">
-<meta property="og:description" content="Cabinet d'orthodontie à Léognan, en face de l'Espace d'Ornon (Villenave-d'Ornon). Enfants, adolescents et adultes. Ouverture en octobre 2026.">
+<meta property="og:description" content="Cabinet d'orthodontie à Léognan, en face de l'Espace d'Ornon (Villenave-d'Ornon). Enfants, adolescents et adultes. Prise de rendez-vous en ligne.">
 <meta property="og:url" content="https://orthodontie-espace-ornon.fr/">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Orthodontie Espace d'Ornon">
+<meta property="og:image" content="https://orthodontie-espace-ornon.fr/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Orthodontie Espace d'Ornon — Dr Inès Fenjiro">
+<meta name="twitter:description" content="Cabinet d'orthodontie à Léognan, en face de l'Espace d'Ornon. Prise de rendez-vous en ligne.">
+<meta name="twitter:image" content="https://orthodontie-espace-ornon.fr/img/og-image.jpg">
+
+<!-- Google Analytics (GA4) — remplacer G-XXXXXXXXXX par votre identifiant de mesure -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true });
+</script>
 
 <!-- Données structurées : cabinet d'orthodontie (référencement local Google) -->
 <script type="application/ld+json">
@@ -110,22 +129,6 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--laiton); outline-
 /* ---------- header ---------- */
 .site-header{ position:sticky; top:0; z-index:60; background: rgba(243,236,224,.9); backdrop-filter: blur(8px); border-bottom:1px solid var(--ligne); }
 
-/* modale d'ouverture */
-.modal-overlay{ position:fixed; inset:0; z-index:200; background:rgba(37,48,46,.55); backdrop-filter:blur(4px); display:flex; align-items:center; justify-content:center; padding:24px; opacity:0; animation:modalFade .35s ease forwards; }
-.modal-overlay.hidden{ display:none; }
-@keyframes modalFade{ to{ opacity:1; } }
-.modal-box{ position:relative; background:var(--beige-carte); border-radius:var(--r-md); max-width:480px; width:100%; padding:42px 38px 34px; text-align:center; box-shadow:0 24px 60px rgba(37,48,46,.28); border-top:5px solid var(--clinique); transform:translateY(14px); animation:modalRise .4s ease .05s forwards; }
-@keyframes modalRise{ to{ transform:translateY(0); } }
-.modal-close{ position:absolute; right:16px; top:12px; background:none; border:none; font-size:1.7rem; line-height:1; color:var(--encre-doux); cursor:pointer; padding:4px 8px; }
-.modal-close:hover{ color:var(--clinique-deep); }
-.modal-icon{ width:60px; height:60px; margin:0 auto 14px; border-radius:50%; background:rgba(108,132,158,.14); display:flex; align-items:center; justify-content:center; }
-.modal-icon svg{ width:30px; height:30px; color:var(--clinique); }
-.modal-eyebrow{ font-size:.74rem; letter-spacing:.18em; text-transform:uppercase; color:var(--clinique); font-weight:700; display:block; margin-bottom:.5em; }
-.modal-box h2{ font-size:1.5rem; margin-bottom:.6em; }
-.modal-box p{ font-size:.96rem; color:var(--encre-doux); margin:0 auto .8em; max-width:none; }
-.modal-sub{ font-size:.9rem; }
-.modal-ok{ width:100%; justify-content:center; margin-top:8px; }
-@media (max-width:480px){ .modal-box{ padding:36px 24px 28px; } }
 .nav{ display:flex; align-items:center; justify-content:space-between; gap:18px; max-width:var(--max-w); margin:0 auto; padding:12px 26px; }
 .brand{ display:flex; align-items:center; gap:12px; }
 .brand svg{ width:46px; height:46px; flex-shrink:0; }
@@ -162,6 +165,10 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--laiton); outline-
 .ph::before{ content:""; position:absolute; inset:0; background-image:repeating-linear-gradient(45deg, rgba(255,255,255,.06) 0 12px, transparent 12px 24px); }
 .ph span{ position:relative; padding:14px; font-size:.74rem; letter-spacing:.08em; text-transform:uppercase; color:rgba(37,48,46,.55); text-align:center; }
 .ph-arch{ border-radius:999px 999px var(--r-md) var(--r-md); }
+.photo-arch{ border-radius:999px 999px var(--r-md) var(--r-md); overflow:hidden; min-height:420px; max-height:560px; }
+.photo-arch img{ width:100%; height:100%; object-fit:cover; display:block; min-height:420px; max-height:560px; }
+.photo-box{ border-radius:var(--r-md); overflow:hidden; min-height:340px; }
+.photo-box img{ width:100%; height:100%; object-fit:cover; display:block; min-height:340px; }
 
 /* ---------- sections ---------- */
 .section{ padding:92px 0; }
@@ -178,7 +185,8 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--laiton); outline-
 .hero h1{ color:#fff; margin-bottom:.35em; }
 .hero-sub{ font-family:var(--titre); font-weight:400; font-size:clamp(1.05rem,2vw,1.4rem); color:var(--beige-deep); margin-bottom:1.2em; }
 .hero p{ color:rgba(252,250,244,.85); }
-.hero-actions{ display:flex; gap:14px; flex-wrap:wrap; margin-top:18px; }
+.hero-actions{ display:flex; gap:16px; flex-wrap:wrap; margin-top:22px; align-items:center; }
+.hero-widget{ justify-content:flex-start; }
 .hero .btn-outline{ border-color:rgba(252,250,244,.5); color:#fff; }
 .hero .btn-outline:hover{ background:rgba(252,250,244,.12); }
 .hero-visual{ position:relative; background:linear-gradient(150deg,#dccdb4,#c2ab8c); }
@@ -286,24 +294,18 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--laiton); outline-
 .legal-todo{ background:rgba(176,141,87,.18); color:#7a5a2e; padding:1px 7px; border-radius:5px; font-weight:600; font-size:.92em; }
 .doctolib-widget{ display:flex; align-items:center; justify-content:center; }
 .doctolib-widget img{ display:block; }
+
+/* bannière cookies */
+.cookie-banner{ position:fixed; left:16px; right:16px; bottom:16px; z-index:150; background:var(--clinique-deep); color:var(--blanc-casse); border-radius:var(--r-md); padding:18px 22px; display:none; align-items:center; gap:18px; box-shadow:0 12px 40px rgba(37,48,46,.25); max-width:760px; margin:0 auto; }
+.cookie-banner.show{ display:flex; }
+.cookie-banner p{ margin:0; font-size:.88rem; color:rgba(252,250,244,.9); max-width:none; }
+.cookie-banner a{ color:var(--clinique-soft); text-decoration:underline; }
+.cookie-ok{ flex-shrink:0; padding:10px 20px; }
+@media (max-width:560px){ .cookie-banner{ flex-direction:column; align-items:stretch; text-align:center; } }
 </style>
 </head>
 <body>
 <a href="#cabinet" class="skip">Aller au contenu</a>
-
-<div class="modal-overlay" id="openModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-  <div class="modal-box">
-    <button class="modal-close" id="modalClose" aria-label="Fermer">&times;</button>
-    <div class="modal-icon" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-    </div>
-    <span class="modal-eyebrow">Nouveau cabinet</span>
-    <h2 id="modalTitle">Ouverture en octobre 2026</h2>
-    <p>Le cabinet <strong>Orthodontie Espace d'Ornon</strong> ouvrira ses portes en octobre 2026, au 3 chemin de Couhins à Léognan, en face de l'Espace d'Ornon (Villenave-d'Ornon).</p>
-    <p class="modal-sub">La prise de rendez-vous en ligne est d’ores et déjà disponible via Doctolib.</p>
-    <button class="btn btn-primary modal-ok" id="modalOk">Découvrir le cabinet</button>
-  </div>
-</div>
 
 <header class="site-header">
   <nav class="nav" aria-label="Navigation principale">
@@ -346,12 +348,12 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--laiton); outline-
         <p class="hero-sub">Dr Fenjiro Inès — spécialiste qualifiée en orthopédie dento-faciale</p>
         <p>Un cabinet d'orthodontie ouvert à tous les publics, pensé autour d'un accompagnement clair et à l'écoute, à chaque étape du traitement.</p>
         <div class="hero-actions">
-          <a href="https://www.doctolib.fr/orthodontiste/leognan/ines-fenjiro" target="_blank" rel="noopener" class="btn btn-primary">Prendre rendez-vous</a>
+          <div class="doctolib-widget hero-widget"><div style="background:#fff;box-shadow:0px 1px 4px rgba(1, 53, 134, 0.16), 0px 0px 1px rgba(1, 53, 134, 0.1);border-radius:8px;padding:16px;font-size:14px;font-family:Roboto, sans-serif;width:fit-content"><div style="display:flex;margin-bottom:16px;gap:16px"><img alt="" src="//media.doctolib.com/image/upload/q_auto:eco,f_auto,dpr_2/w_48,h_48,c_fill,g_face/jckysrmlhpaonr4tmww4" style="border-radius:50%;width:48px;height:48px"/><div><div style="font-weight:bold;color:#107ACA;line-height:24px">Dr Inès Fenjiro</div><div style="display:flex;gap:4px;align-items:center;line-height:24px;color:#2B4660"><svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="presentation" data-icon-name="regular/location-dot" class="dl-icon dl-icon-xsmall" data-design-system="oxygen" data-design-system-component="Icon"><path d="M9.875 6.5A1.866 1.866 0 0 1 8 8.375 1.85 1.85 0 0 1 6.125 6.5c0-1.031.82-1.875 1.875-1.875A1.88 1.88 0 0 1 9.875 6.5M8 5.75a.755.755 0 0 0-.75.75c0 .422.328.75.75.75.398 0 .75-.328.75-.75A.77.77 0 0 0 8 5.75m4.5.75c0 2.063-2.742 5.695-3.96 7.219a.707.707 0 0 1-1.102 0C6.218 12.195 3.5 8.563 3.5 6.5 3.5 4.016 5.492 2 8 2c2.484 0 4.5 2.016 4.5 4.5M8 3.125A3.376 3.376 0 0 0 4.625 6.5c0 .305.094.75.352 1.36.234.562.585 1.218.984 1.874A36 36 0 0 0 8 12.594c.563-.75 1.336-1.781 2.016-2.86.398-.656.75-1.312.984-1.875.258-.609.375-1.054.375-1.359A3.39 3.39 0 0 0 8 3.125"></path></svg>Léognan</div></div></div><a href="https://www.doctolib.fr/orthodontiste/leognan/ines-fenjiro/booking?source=external_referral&amp;utm_campaign=website-button&amp;utm_source=ines-fenjiro-website-button&amp;utm_medium=referral&amp;utm_content=withpreview-white-inlined&amp;utm_term=ines-fenjiro" target="_blank" style="display:flex;gap:8px;padding:8px 16px;height:40px;border-radius:8px;justify-content:center;align-items:center;background-color:#107ACA;color:#ffffff;font-size:14px;font-weight:700;text-transform:uppercase;text-decoration:none" aria-label="Prendre rendez-vous Doctolib"><svg xml:space="preserve" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="presentation" style="width:16px;height:16px" data-icon-name="regular/doctolib-logo" class="dl-icon dl-icon-xsmall" data-design-system="oxygen" data-design-system-component="Icon"><path d="M12.8 7.8c.3-1.6.3-4.8-4.8-5.3-1.3-.1-3.4.2-4.8.5v.1c0 .1.2.3.4.4.1.1.4 0 .5 0 4.6-.4 7.9.6 7.3 4-.3 1.9-1.6 4.4-5.1 4.4-.7 0-.8-.1-.7-.6 0-.1 1.1-5.9 1.2-6.5 0 0-.8-.2-1 .6 0 .2-1.9 7-2 7.4-.1.5.2.8 2.5.8 5.5-.1 6.3-4.8 6.5-5.8"></path></svg>Prendre rendez-vous</a></div></div>
           <a href="#infos" class="btn btn-outline">Accès &amp; contact</a>
         </div>
         <span class="hero-open">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-          Ouverture en octobre 2026
+          Lundi, mardi, mercredi &amp; vendredi · 8h45–18h30
         </span>
       </div>
       <div class="hero-visual">
@@ -366,14 +368,27 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--laiton); outline-
       <div class="divider" aria-hidden="true"></div>
       <span class="eyebrow">Le cabinet</span>
       <h2>Un lieu dédié à l'orthodontie</h2>
-      <p class="lead">Le cabinet ouvrira ses portes au 3 chemin de Couhins à Léognan, en face de l'Espace d'Ornon (Villenave-d'Ornon). Les traitements s'adressent à tous les publics, de la première consultation jusqu'à la fin de la contention.</p>
+      <p class="lead">Le cabinet vous accueille au 3 chemin de Couhins à Léognan, en face de l'Espace d'Ornon (Villenave-d'Ornon). Les traitements s'adressent à tous les publics, de la première consultation jusqu'à la fin de la contention.</p>
+    </div>
+  </section>
+
+  <!-- ACCUEIL -->
+  <section class="section">
+    <div class="container grid-2">
+      <div>
+        <span class="eyebrow">L'accueil</span>
+        <h2>Un espace clair et apaisant</h2>
+        <p>Dès votre arrivée, vous êtes accueilli dans un espace lumineux et soigné, pensé pour que chaque patient se sente à l'aise, enfant comme adulte.</p>
+        <p>Le secrétariat vous accompagne pour la prise de rendez-vous, le suivi de votre dossier et toutes vos questions pratiques.</p>
+      </div>
+      <div class="photo-box"><img src="img/accueil.jpg" alt="Accueil et secrétariat du cabinet" loading="lazy"></div>
     </div>
   </section>
 
   <!-- CABINET VISUEL + TEXTE -->
   <section class="section">
     <div class="container grid-2">
-      <div class="ph ph-arch" style="min-height:420px;" role="img" aria-label="Photographie de la salle de soins à venir"><span>Salle de soins — à venir</span></div>
+      <div class="photo-arch"><img src="img/salle-soins.jpg" alt="Salle de soins du cabinet d'orthodontie" loading="lazy"></div>
       <div>
         <span class="eyebrow">Notre approche</span>
         <h2>Un cabinet numérique</h2>
@@ -504,7 +519,7 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--laiton); outline-
               <li class="closed"><span>Samedi</span><span>Fermé</span></li>
               <li class="closed"><span>Dimanche</span><span>Fermé</span></li>
             </ul>
-            <p style="margin:10px 0 0; font-size:.85rem; color:var(--encre-doux);">À partir de octobre 2026</p>
+            <p style="margin:10px 0 0; font-size:.85rem; color:var(--encre-doux);"></p>
           </div>
           <div class="info-card">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
@@ -550,14 +565,14 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--laiton); outline-
         Courriel : <a href="mailto:contact@orthodontie-espace-ornon.fr">contact@orthodontie-espace-ornon.fr</a><br>
         Numéro RPPS : 10101296886<br>
         Numéro ADELI / identifiant : <span class="legal-todo">[à compléter si applicable]</span><br>
-        SIRET : <span class="legal-todo">[à compléter]</span>
+        SIRET : 952 746 352 00022
       </p>
 
       <h3>Profession et encadrement</h3>
       <p>
         Profession réglementée : chirurgien-dentiste, spécialiste qualifié en orthopédie dento-faciale.<br>
         Diplôme : Diplôme d'études spécialisées (D.E.S) d'orthopédie dento-faciale — délivré en France.<br>
-        Inscription auprès du Conseil départemental de l'Ordre des chirurgiens-dentistes : <span class="legal-todo">[Gironde — n° d'inscription à compléter]</span><br>
+        Inscrite au tableau du Conseil départemental de la Gironde de l'Ordre national des chirurgiens-dentistes.<br>
         Conventionnée — Assurance Maladie (secteur conventionnel des chirurgiens-dentistes).<br>
         Le praticien est soumis au Code de déontologie des chirurgiens-dentistes (articles R.4127-201 à R.4127-231 du Code de la santé publique) et aux règles de l'Ordre national des chirurgiens-dentistes.
       </p>
@@ -619,6 +634,34 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--laiton); outline-
     </div>
   </section>
 
+  <!-- CGU -->
+  <section class="section section--carte legal-page" id="cgu" hidden>
+    <div class="container" style="max-width:820px;">
+      <span class="eyebrow">Conditions</span>
+      <h2>Conditions générales d'utilisation</h2>
+
+      <h3>Objet</h3>
+      <p>Le présent site a pour objet de présenter le cabinet d'orthodontie Orthodontie Espace d'Ornon (Dr Fenjiro Inès) et d'informer les patients. Il ne permet pas la transmission de données médicales : la prise de rendez-vous s'effectue via la plateforme Doctolib, soumise à ses propres conditions.</p>
+
+      <h3>Accès au site</h3>
+      <p>Le site est accessible gratuitement. Le cabinet s'efforce d'en assurer la disponibilité, sans garantie d'accès continu, et se réserve le droit d'en modifier le contenu à tout moment.</p>
+
+      <h3>Nature des informations</h3>
+      <p>Les informations diffusées ont une vocation informative générale et ne constituent en aucun cas un avis médical ni un diagnostic. Seule une consultation permet une évaluation personnalisée.</p>
+
+      <h3>Propriété intellectuelle</h3>
+      <p>L'ensemble des contenus (textes, logo, illustrations) est protégé. Toute reproduction sans autorisation est interdite.</p>
+
+      <h3>Liens externes</h3>
+      <p>Le site peut contenir des liens vers des sites tiers (Doctolib, Google Maps). Le cabinet n'est pas responsable de leur contenu ni de leurs pratiques en matière de données.</p>
+
+      <h3>Droit applicable</h3>
+      <p>Les présentes conditions sont soumises au droit français. Tout litige relève des tribunaux compétents.</p>
+
+      <p style="margin-top:28px;"><a class="btn btn-outline" href="#top" data-legal-close>Retour au site</a></p>
+    </div>
+  </section>
+
 </main>
 
 <footer class="site-footer">
@@ -659,7 +702,7 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--laiton); outline-
     </div>
     <div class="footer-bottom">
       <span>© 2026 Orthodontie Espace d'Ornon — Dr Fenjiro Inès</span>
-      <span><a href="#mentions-legales" data-legal-open>Mentions légales</a> · <a href="#confidentialite" data-legal-open>Données personnelles</a></span>
+      <span><a href="#mentions-legales" data-legal-open>Mentions légales</a> · <a href="#confidentialite" data-legal-open>Données personnelles</a> · <a href="#cgu" data-legal-open>CGU</a></span>
     </div>
   </div>
 </footer>
@@ -672,16 +715,6 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--laiton); outline-
     t.setAttribute('aria-expanded',o);
   });
   l.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){l.classList.remove('open');t.setAttribute('aria-expanded',false);});});
-
-  // modale d'ouverture
-  var modal=document.getElementById('openModal'),
-      mClose=document.getElementById('modalClose'),
-      mOk=document.getElementById('modalOk');
-  function closeModal(){ modal.classList.add('hidden'); }
-  if(mClose) mClose.addEventListener('click',closeModal);
-  if(mOk) mOk.addEventListener('click',closeModal);
-  if(modal) modal.addEventListener('click',function(e){ if(e.target===modal) closeModal(); });
-  document.addEventListener('keydown',function(e){ if(e.key==='Escape' && modal && !modal.classList.contains('hidden')) closeModal(); });
 
   // pages légales
   var mainSections = Array.prototype.slice.call(document.querySelectorAll('#main-content > section:not(.legal-page)'));
@@ -706,6 +739,24 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--laiton); outline-
   document.querySelectorAll('[data-legal-close]').forEach(function(a){
     a.addEventListener('click',function(e){ e.preventDefault(); closeLegal(); });
   });
+
+  // bannière cookies
+  (function(){
+    var cb=document.getElementById('cookieBanner');
+    if(!cb) return;
+    var seen=false;
+    try{ seen=localStorage.getItem('ornon_cookies')==='1'; }catch(e){}
+    if(!seen){ cb.classList.add('show'); }
+    var ok=document.getElementById('cookieOk');
+    if(ok){ ok.addEventListener('click',function(){
+      try{ localStorage.setItem('ornon_cookies','1'); }catch(e){}
+      cb.classList.remove('show');
+    }); }
+  })();
 </script>
+<div class="cookie-banner" id="cookieBanner" role="region" aria-label="Information cookies">
+  <p>Ce site n'utilise pas de cookies publicitaires. Seule la carte Google Maps est susceptible d'en déposer pour son fonctionnement. En poursuivant votre navigation, vous l'acceptez. <a href="#confidentialite" data-legal-open>En savoir plus</a></p>
+  <button class="btn btn-primary cookie-ok" id="cookieOk">J'ai compris</button>
+</div>
 </body>
 </html>
