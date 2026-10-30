@@ -45,6 +45,7 @@
   "name": "Orthodontie Espace d'Ornon — Dr Fenjiro Inès",
   "description": "Cabinet d'orthodontie. Spécialiste qualifiée en orthopédie dento-faciale. Traitements pour enfants, adolescents et adultes.",
   "url": "https://orthodontie-espace-ornon.fr/",
+  "telephone": "+33556885977",
   "medicalSpecialty": "Orthodontic",
   "address": {
     "@type": "PostalAddress",
@@ -54,7 +55,14 @@
     "addressRegion": "Nouvelle-Aquitaine",
     "addressCountry": "FR"
   },
+  "image": "https://orthodontie-espace-ornon.fr/img/og-image.jpg",
   "areaServed": ["Léognan", "Villenave-d'Ornon", "Saint-Selve", "La Brède", "Bègles", "Cadaujac", "Cadillac", "Gironde"],
+  "availableService": [
+    { "@type": "MedicalProcedure", "name": "Traitements d'interception (disjoncteur maxillaire)" },
+    { "@type": "MedicalProcedure", "name": "Traitement multi-attaches (bagues métalliques ou céramiques)" },
+    { "@type": "MedicalProcedure", "name": "Traitement par aligneurs transparents" },
+    { "@type": "MedicalProcedure", "name": "Contention" }
+  ],
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
@@ -63,6 +71,11 @@
       "closes": "18:30"
     }
   ],
+  "potentialAction": {
+    "@type": "ReserveAction",
+    "target": "https://www.doctolib.fr/orthodontiste/leognan/ines-fenjiro",
+    "name": "Prendre rendez-vous"
+  },
   "founder": {
     "@type": "Person",
     "name": "Dr Fenjiro Inès",
@@ -169,6 +182,8 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--laiton); outline-
 .photo-arch img{ width:100%; height:100%; object-fit:cover; display:block; min-height:420px; max-height:560px; }
 .photo-box{ border-radius:var(--r-md); overflow:hidden; min-height:340px; }
 .photo-box img{ width:100%; height:100%; object-fit:cover; display:block; min-height:340px; }
+.photo-box-lg{ min-height:460px; }
+.photo-box-lg img{ min-height:460px; }
 
 /* ---------- sections ---------- */
 .section{ padding:92px 0; }
@@ -294,6 +309,13 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--laiton); outline-
 .legal-todo{ background:rgba(176,141,87,.18); color:#7a5a2e; padding:1px 7px; border-radius:5px; font-weight:600; font-size:.92em; }
 .doctolib-widget{ display:flex; align-items:center; justify-content:center; }
 .doctolib-widget img{ display:block; }
+/* badges téléchargement app */
+.app-badges{ display:flex; gap:12px; flex-wrap:wrap; margin-top:22px; }
+.app-badge{ display:inline-flex; align-items:center; gap:10px; background:#111; color:#fff; padding:9px 16px; border-radius:9px; text-decoration:none; transition:transform .18s, background .2s; }
+.app-badge:hover{ transform:translateY(-1px); background:#000; }
+.app-badge svg{ width:24px; height:24px; flex-shrink:0; }
+.app-badge span{ display:flex; flex-direction:column; line-height:1.15; font-weight:600; font-size:1rem; }
+.app-badge small{ font-size:.62rem; font-weight:400; letter-spacing:.02em; opacity:.85; text-transform:none; }
 
 /* bannière cookies */
 .cookie-banner{ position:fixed; left:16px; right:16px; bottom:16px; z-index:150; background:var(--clinique-deep); color:var(--blanc-casse); border-radius:var(--r-md); padding:18px 22px; display:none; align-items:center; gap:18px; box-shadow:0 12px 40px rgba(37,48,46,.25); max-width:760px; margin:0 auto; }
@@ -377,11 +399,11 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--laiton); outline-
     <div class="container grid-2">
       <div>
         <span class="eyebrow">L'accueil</span>
-        <h2>Un espace clair et apaisant</h2>
-        <p>Dès votre arrivée, vous êtes accueilli dans un espace lumineux et soigné, pensé pour que chaque patient se sente à l'aise, enfant comme adulte.</p>
-        <p>Le secrétariat vous accompagne pour la prise de rendez-vous, le suivi de votre dossier et toutes vos questions pratiques.</p>
+        <h2>Le secrétariat</h2>
+        <p>Le secrétariat vous accueille pour la prise de rendez-vous, l'établissement des devis, le suivi de votre dossier et le traitement de vos demandes administratives.</p>
+        <p>Il assure le lien avec la praticienne et vous accompagne tout au long de votre prise en charge.</p>
       </div>
-      <div class="photo-box"><img src="img/accueil.jpg" alt="Accueil et secrétariat du cabinet" loading="lazy"></div>
+      <div class="photo-box photo-box-lg"><img src="img/accueil.jpg" alt="Secrétariat du cabinet" loading="lazy"></div>
     </div>
   </section>
 
@@ -391,9 +413,9 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--laiton); outline-
       <div class="photo-arch"><img src="img/salle-soins.jpg" alt="Salle de soins du cabinet d'orthodontie" loading="lazy"></div>
       <div>
         <span class="eyebrow">Notre approche</span>
-        <h2>Un cabinet numérique</h2>
-        <p>Le cabinet est pensé autour d'un fonctionnement numérique. Les empreintes dentaires sont réalisées à l'aide d'une caméra numérique intra-orale, sans pâte. Le plateau technique comprend une radiographie panoramique et un cone beam.</p>
-        <p>La gestion administrative est elle aussi dématérialisée au maximum — devis, questionnaires et documents sous forme numérique — pour limiter le papier et simplifier votre parcours.</p>
+        <h2>Le cabinet</h2>
+        <p>Le cabinet s'appuie sur un fonctionnement entièrement numérique. Les empreintes sont réalisées à l'aide d'une caméra intra-orale, et le plateau technique comprend une radiographie panoramique et un cone beam.</p>
+        <p>La gestion administrative est elle aussi dématérialisée — devis, questionnaires et documents sous forme numérique — pour simplifier votre parcours et limiter le papier.</p>
       </div>
     </div>
   </section>
@@ -429,8 +451,8 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--laiton); outline-
     <div class="container">
       <div class="center" style="max-width:720px; margin:0 auto 52px;">
         <span class="eyebrow">Nos traitements</span>
-        <h2>Des solutions adaptées à chaque âge</h2>
-        <p>Selon l'âge et la situation clinique, différentes approches peuvent être proposées. Elles sont présentées et expliquées lors de la consultation.</p>
+        <h2>Les différents types de traitements</h2>
+        <p>Plusieurs approches existent selon la situation clinique. Elles sont présentées et expliquées lors de la consultation.</p>
       </div>
 
       <div class="treat-grid">
@@ -485,7 +507,17 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--laiton); outline-
       <div>
         <span class="eyebrow">Espace patients</span>
         <h2>Suivre son traitement simplement</h2>
-        <p>La prise de rendez-vous se fait en ligne via Doctolib, simplement et à tout moment. Le suivi pourra être accompagné par l'application OrthoAdvance, mise à disposition des patients du cabinet.</p>
+        <p>La prise de rendez-vous se fait en ligne via Doctolib, simplement et à tout moment. Le suivi de votre traitement est accompagné par l'application My OrthoADVANCE, mise à disposition des patients du cabinet.</p>
+        <div class="app-badges">
+          <a href="https://apps.apple.com/fr/app/my-orthoadvance/id6737807824" target="_blank" rel="noopener" class="app-badge" aria-label="Télécharger My OrthoADVANCE sur l'App Store">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 12.04c-.03-2.83 2.31-4.19 2.42-4.25-1.32-1.93-3.38-2.2-4.11-2.23-1.75-.18-3.41 1.03-4.3 1.03-.88 0-2.25-1.01-3.7-.98-1.9.03-3.66 1.11-4.64 2.81-1.98 3.43-.51 8.5 1.42 11.28.94 1.36 2.06 2.89 3.52 2.83 1.41-.06 1.95-.91 3.66-.91 1.7 0 2.19.91 3.69.88 1.52-.03 2.49-1.39 3.42-2.76 1.08-1.58 1.53-3.11 1.55-3.19-.03-.02-2.97-1.14-3-4.53zM14.28 4.1c.78-.94 1.3-2.26 1.16-3.57-1.12.05-2.48.75-3.28 1.69-.72.83-1.35 2.16-1.18 3.43 1.25.1 2.52-.63 3.3-1.55z"/></svg>
+            <span><small>Télécharger sur</small>App Store</span>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.agicia.orthoadvance.myorthoadvance&hl=fr" target="_blank" rel="noopener" class="app-badge" aria-label="Télécharger My OrthoADVANCE sur Google Play">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 2.3c-.3.3-.5.8-.5 1.4v16.6c0 .6.2 1.1.5 1.4l.1.1 9.3-9.3v-.2L3.7 2.2l-.1.1zm12.5 12.5l-3.1-3.1 3.1-3.1 3.7 2.1c1.1.6 1.1 1.6 0 2.2l-3.7 1.9zm-.9.9l-3.2-3.2-9 9c.4.4 1 .4 1.7.1l10.5-5.9zM4.7 1.9l9 5.9-3.2 3.2-1.5-8.9c0-.1-.2-.1-.3-.1-.6-.3-1.2-.3-1.6-.1z"/></svg>
+            <span><small>Disponible sur</small>Google Play</span>
+          </a>
+        </div>
       </div>
       <div class="doctolib-widget">
         <div style="background:#fff;box-shadow:0px 1px 4px rgba(1, 53, 134, 0.16), 0px 0px 1px rgba(1, 53, 134, 0.1);border-radius:8px;padding:16px;font-size:14px;font-family:Roboto, sans-serif;width:fit-content"><div style="display:flex;margin-bottom:16px;gap:16px"><img alt="" src="//media.doctolib.com/image/upload/q_auto:eco,f_auto,dpr_2/w_48,h_48,c_fill,g_face/jckysrmlhpaonr4tmww4" style="border-radius:50%;width:48px;height:48px"/><div><div style="font-weight:bold;color:#107ACA;line-height:24px">Dr Inès Fenjiro</div><div style="display:flex;gap:4px;align-items:center;line-height:24px;color:#2B4660"><svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="presentation" data-icon-name="regular/location-dot" class="dl-icon dl-icon-xsmall" data-design-system="oxygen" data-design-system-component="Icon"><path d="M9.875 6.5A1.866 1.866 0 0 1 8 8.375 1.85 1.85 0 0 1 6.125 6.5c0-1.031.82-1.875 1.875-1.875A1.88 1.88 0 0 1 9.875 6.5M8 5.75a.755.755 0 0 0-.75.75c0 .422.328.75.75.75.398 0 .75-.328.75-.75A.77.77 0 0 0 8 5.75m4.5.75c0 2.063-2.742 5.695-3.96 7.219a.707.707 0 0 1-1.102 0C6.218 12.195 3.5 8.563 3.5 6.5 3.5 4.016 5.492 2 8 2c2.484 0 4.5 2.016 4.5 4.5M8 3.125A3.376 3.376 0 0 0 4.625 6.5c0 .305.094.75.352 1.36.234.562.585 1.218.984 1.874A36 36 0 0 0 8 12.594c.563-.75 1.336-1.781 2.016-2.86.398-.656.75-1.312.984-1.875.258-.609.375-1.054.375-1.359A3.39 3.39 0 0 0 8 3.125"></path></svg>Léognan</div></div></div><a href="https://www.doctolib.fr/orthodontiste/leognan/ines-fenjiro/booking?source=external_referral&amp;utm_campaign=website-button&amp;utm_source=ines-fenjiro-website-button&amp;utm_medium=referral&amp;utm_content=withpreview-white-inlined&amp;utm_term=ines-fenjiro" target="_blank" style="display:flex;gap:8px;padding:8px 16px;height:40px;border-radius:8px;justify-content:center;align-items:center;background-color:#107ACA;color:#ffffff;font-size:14px;font-weight:700;text-transform:uppercase;text-decoration:none" aria-label="Prendre rendez-vous Doctolib"><svg xml:space="preserve" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="presentation" style="width:16px;height:16px" data-icon-name="regular/doctolib-logo" class="dl-icon dl-icon-xsmall" data-design-system="oxygen" data-design-system-component="Icon"><path d="M12.8 7.8c.3-1.6.3-4.8-4.8-5.3-1.3-.1-3.4.2-4.8.5v.1c0 .1.2.3.4.4.1.1.4 0 .5 0 4.6-.4 7.9.6 7.3 4-.3 1.9-1.6 4.4-5.1 4.4-.7 0-.8-.1-.7-.6 0-.1 1.1-5.9 1.2-6.5 0 0-.8-.2-1 .6 0 .2-1.9 7-2 7.4-.1.5.2.8 2.5.8 5.5-.1 6.3-4.8 6.5-5.8"></path></svg>Prendre rendez-vous</a></div>
@@ -523,8 +555,8 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--laiton); outline-
           </div>
           <div class="info-card">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
-            <strong>Rendez-vous</strong>
-            <p style="margin:0; color:var(--encre-doux);">En ligne via <a href="https://www.doctolib.fr/orthodontiste/leognan/ines-fenjiro" target="_blank" rel="noopener" style="color:var(--clinique); font-weight:600;">Doctolib</a>.</p>
+            <strong>Rendez-vous &amp; contact</strong>
+            <p style="margin:0; color:var(--encre-doux);">En ligne via <a href="https://www.doctolib.fr/orthodontiste/leognan/ines-fenjiro" target="_blank" rel="noopener" style="color:var(--clinique); font-weight:600;">Doctolib</a><br>Téléphone : <a href="tel:+33556885977" style="color:var(--clinique); font-weight:600;">05 56 88 59 77</a></p>
           </div>
         </div>
         <div class="map-col">
@@ -561,7 +593,7 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--laiton); outline-
         Dr Fenjiro Inès — Orthodontiste, spécialiste diplômée d'État en chirurgie dentaire.<br>
         Cabinet « Orthodontie Espace d'Ornon »<br>
         3 chemin de Couhins, 33850 Léognan<br>
-        Téléphone : <span class="legal-todo">[à compléter]</span><br>
+        Téléphone : <a href="tel:+33556885977">05 56 88 59 77</a><br>
         Courriel : <a href="mailto:contact@orthodontie-espace-ornon.fr">contact@orthodontie-espace-ornon.fr</a><br>
         Numéro RPPS : 10101296886<br>
         Numéro ADELI / identifiant : <span class="legal-todo">[à compléter si applicable]</span><br>
@@ -695,7 +727,7 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--laiton); outline-
         <ul>
           <li>3 chemin de Couhins<br>33850 Léognan</li>
           <li><a href="mailto:contact@orthodontie-espace-ornon.fr">contact@orthodontie-espace-ornon.fr</a></li>
-          <li>Téléphone — à venir</li>
+          <li><a href="tel:+33556885977">05 56 88 59 77</a></li>
           <li><a href="https://www.doctolib.fr/orthodontiste/leognan/ines-fenjiro" target="_blank" rel="noopener">Rendez-vous via Doctolib</a></li>
         </ul>
       </div>
